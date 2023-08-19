@@ -14,9 +14,9 @@ This project uses [Cargo](https://doc.rust-lang.org/cargo/getting-started/instal
    ```shell
    git clone https://github.com/spacedriveapp/spacedrive && cd spacedrive
    ```
-2. **Run setup script**
+2. **Arrange building environments**
 
-   **For Linux or MacOS users run:**
+   **Linux and macOS**
 
    ```shell
    ./.github/scripts/setup-system.sh
@@ -24,13 +24,27 @@ This project uses [Cargo](https://doc.rust-lang.org/cargo/getting-started/instal
 
    This will install FFmpeg and any other required dependencies for Spacedrive to build.
 
-   **...or for Windows users run using PowerShell:**
+   **Windows**
+   ***Automatic script***
+   The automatic script is provided to install needed environments automatically:
 
    ```shell
    .\.github\scripts\setup-system.ps1
    ```
 
    _This will install pnpm, LLVM, FFmpeg and any other required dependencies for Spacedrive to build. Ensure you run it like documented above as it expects it is executed from the root of the repository._
+
+   ***Configure manually***
+   What's more, you can install needed environments manually. It's supposed `winget` is available at your computer and its version is at least `v1.4.10052`. Theoretically `scoop` or `choco` works as well but we can't promise there won't be problems.
+
+   First install Virtual Studio Building Tools. If you already have it installed, be careful about the version.
+
+   ```
+   winget install --id Microsoft.VisualStudio.2022.BuildTools
+   ```
+
+   Then it will come to `rustup`, Node.JS, `LLVM`.
+   TODO
 
 3. **Install dependencies**
    ```shell
